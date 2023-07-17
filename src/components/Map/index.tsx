@@ -1,8 +1,7 @@
+import { LatLngExpression } from 'leaflet'
 import dynamic from 'next/dynamic'
 import { useEffect } from 'react'
 import { useResizeDetector } from 'react-resize-detector'
-
-import MapTopBar from '@components/TopBar'
 
 import { AppConfig } from '@lib/AppConfig'
 import MarkerCategories, { Category } from '@lib/MarkerCategories'
@@ -28,6 +27,11 @@ const LocateButton = dynamic(async () => (await import('./ui/LocateButton')).Loc
 const LeafletMap = dynamic(async () => (await import('./LeafletMap')).LeafletMap, {
   ssr: false,
 })
+
+interface PlacesType {
+  position: LatLngExpression
+  category: Category
+}
 
 const MapInner = () => {
   const { map } = useMapContext()
@@ -67,15 +71,13 @@ const MapInner = () => {
 
   return (
     <div className="h-full w-full absolute overflow-hidden" ref={viewportRef}>
-      <MapTopBar />
-      <div
-        className={`absolute w-full left-0 transition-opacity ${isLoading ? 'opacity-0' : 'opacity-1 '}`}
-        style={{
-          top: AppConfig.ui.topBarHeight,
-          width: viewportWidth ?? '100%',
-          height: viewportHeight ? viewportHeight - AppConfig.ui.topBarHeight : '100%',
-        }}
-      >
+      <div className="h-full">
+        {/* // className={`absolute w-full left-0 transition-opacity ${isLoading ? 'opacity-0' : 'opacity-1 '}`}
+        // style={{
+        //   top: AppConfig.ui.topBarHeight,
+        //   width: viewportWidth ?? '100%',
+        //   height: viewportHeight ? viewportHeight - AppConfig.ui.topBarHeight : '100%',
+        // }} */}
         <LeafletMap
           center={allMarkersBoundCenter.centerPos}
           zoom={allMarkersBoundCenter.minZoom}

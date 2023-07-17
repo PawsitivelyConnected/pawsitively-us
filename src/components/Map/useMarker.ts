@@ -1,10 +1,9 @@
 import { LatLngExpression, Map } from 'leaflet'
 import { chain } from 'lodash'
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 
 import useLeafletWindow from '@components/Map/useLeafletWindow'
 
-import { AppConfig } from '@lib/AppConfig'
 import { Category } from '@lib/MarkerCategories'
 import { PlacesType } from '@lib/Places'
 
@@ -22,10 +21,11 @@ interface allMarkerPosValues {
 
 const useMarker = ({ locations, map, viewportWidth, viewportHeight }: useMapDataValues) => {
   const leafletWindow = useLeafletWindow()
+  const [currentLocation, setLocation] = useState<LatLngExpression>()
 
   const [allMarkersBoundCenter, setAllMarkersBoundCenter] = useState<allMarkerPosValues>({
-    minZoom: AppConfig.minZoom - 1,
-    centerPos: AppConfig.baseCenter,
+    minZoom: 15,
+    centerPos: [12.841922, 80.155343],
   })
 
   // get bounds of all markers
@@ -47,17 +47,6 @@ const useMarker = ({ locations, map, viewportWidth, viewportHeight }: useMapData
         .value(),
     [locations],
   )
-
-  // useMemo will not work here, because we need to update the map size after the viewport size changes
-  useEffect(() => {
-    if (!allMarkerBounds || !leafletWindow || !map) return
-
-    map.invalidateSize()
-    setAllMarkersBoundCenter({
-      minZoom: map.getBoundsZoom(allMarkerBounds),
-      centerPos: [allMarkerBounds.getCenter().lat, allMarkerBounds.getCenter().lng],
-    })
-  }, [allMarkerBounds, viewportWidth, viewportHeight])
 
   return { clustersByCategory, allMarkersBoundCenter }
 }

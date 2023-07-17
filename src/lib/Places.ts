@@ -10,8 +10,8 @@ export type PlacesType = PlaceValues[]
 
 export const Places: PlacesType = [
   {
-    position: [52.051977014580125, 8.531494086782844],
-    category: Category.CAT1,
+    position: [12.841922, 80.155343],
+    category: Category.LOCATE,
   },
   {
     position: [52.02022592597971, 8.530780645829076],
