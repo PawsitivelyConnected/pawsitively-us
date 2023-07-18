@@ -1,5 +1,7 @@
-import { Leaf, LocateFixed, LucideProps, PersonStanding } from 'lucide-react'
+import { LucideProps } from 'lucide-react'
 import { FunctionComponent } from 'react'
+import { BiSolidDog } from 'react-icons/bi'
+import { GoPerson } from 'react-icons/go'
 import { TiLocationArrow } from 'react-icons/ti'
 import colors from 'tailwindcss/colors'
 
@@ -23,17 +25,17 @@ const MarkerCategories: MarkerCategorieType = {
   [Category.LOCATE]: {
     name: 'User Location',
     icon: TiLocationArrow,
-    color: colors.green[400],
+    color: colors.orange[400],
   },
   [Category.CAT1]: {
     name: 'Category 1',
-    icon: Leaf,
-    color: colors.blue[400],
+    icon: BiSolidDog,
+    color: colors.sky[700],
   },
   [Category.CAT2]: {
     name: 'Category 2',
-    icon: PersonStanding,
-    color: colors.red[400],
+    icon: GoPerson,
+    color: colors.purple[500],
   },
 }
 

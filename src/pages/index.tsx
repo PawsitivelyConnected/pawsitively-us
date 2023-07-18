@@ -1,80 +1,65 @@
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 import client from '@src/supabase/client'
 
-const LandingPage = (): JSX.Element => {
-  const router = useRouter()
-  const [auth, setAuth] = useState<any>()
-  const [loading, setLoading] = useState<boolean>(true)
-  const [notLogged, setLogged] = useState<boolean>(false)
-  useEffect(() => {
-    client.auth.getSession().then(session => {
-      if (session.data.session?.user.aud == 'authenticated') {
-        setAuth(session.data.session)
-        setLoading(false)
-      } else {
-        router.push('/maps')
-        setLogged(true)
-      }
-    })
-  })
-
-  if (notLogged) {
-    return (
-      <section>
-        <nav className="absolute top-0 w-full h-16 bg-[#060d37] flex justify-between items-center text-white px-8">
-          <section className="font-extrabold font-inter">Pawisitively me</section>
-          <button className="font-regular hover:p-1 rounded-md hover:border hover:border-white">Login</button>
-        </nav>
-        <section>
-          <section className="flex flex-col h-screen items-start justify-start bg-gray-100 p-4 my-16 font-semibold text-3xl border-b-secondary">
-            <a href="/maps" className="text-blue-600 hover:text-blue-800 hover:underline capitalize">
-              View our maps
-            </a>
-            <p>
-              <a href="/last-seen" className="text-blue-600 hover:text-blue-800 hover:underline capitalize">
-                Last seen
-              </a>
-            </p>
-            <p>
-              <a href="/details" className="text-blue-600 hover:text-blue-800 hover:underline capitalize">
-                Details
-              </a>
-            </p>
-          </section>
-        </section>
-      </section>
-    )
-  }
-  if (loading) {
-    return <section>Loading...</section>
-  }
+const NonLanding = () => {
   return (
-    <section>
-      <nav className="absolute top-0 w-full h-16 bg-[#060d37] flex justify-between items-center text-white px-8">
-        <section className="font-extrabold font-inter">Pawisitively me</section>
-        <button className="font-regular hover:p-1 rounded-md hover:border hover:border-white">Login</button>
-      </nav>
+    <section className="container mx-auto max-w-2xl max-md:max-w-none">
+      <header className="mt-10 items-top gap-4 md:flex">
+        <section>
+          <h2 className="text-4xl font-bold">Pawsitively me</h2>
+          <h3 className="text-3xl mb-16">Connect with your dog</h3>
+        </section>
+      </header>
       <section>
-        <section className="flex flex-col h-screen items-start justify-start bg-gray-100 p-4 my-16 font-semibold text-3xl border-b-secondary">
-          <a href="/maps" className="text-blue-600 hover:text-blue-800 hover:underline capitalize">
-            View our maps
-          </a>
-          <p>
-            <a href="/last-seen" className="text-blue-600 hover:text-blue-800 hover:underline capitalize">
-              Last seen
-            </a>
-          </p>
-          <p>
-            <a href="/details" className="text-blue-600 hover:text-blue-800 hover:underline capitalize">
-              Details
-            </a>
-          </p>
+        <p className="mb-2">
+          An amazing simple app, that allows you to add{' '}
+          <Link className="text-primary" href="/maps">
+            map-related ID features
+          </Link>{' '}
+          for non-conscious things starting with your dog🐶
+          <span>. ✨</span>
+        </p>
+      </section>
+      <section className="flex flex-col">
+        <section className="text-4xl text-primary font-bold">Features</section>
+        <section className="text-xl py-2">
+          <ul className="list-inside">
+            <li>
+              <Link href="/maps" className="hover:text-primary hover:underline">
+                {'>'} Interactive maps
+              </Link>
+            </li>
+            <li>
+              <Link href="/products" className="hover:text-primary hover:underline">
+                {'>'} Add any taggable item
+              </Link>
+            </li>
+            <li>
+              <Link href="/last-seen" className="hover:text-primary hover:underline" id="lastSeenButton">
+                {'>'} Last seen data
+              </Link>
+            </li>
+          </ul>
         </section>
       </section>
+      <footer className="mt-16 flex justify-between p-3 rounded bg-light text-sm">
+        <section>
+          2023 - Abhijith Ganesh, Hamsini R, Sivaranjini C, Sukanth K
+          <br />
+          <Link href="github.com/pawsitivelyConnected/" className="text-primary">
+            Team Pawsitively me
+          </Link>
+        </section>
+      </footer>
     </section>
   )
+}
+
+const LandingPage = (): JSX.Element => {
+  return <NonLanding />
 }
 
 export default LandingPage

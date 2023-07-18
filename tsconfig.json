@@ -24,6 +24,6 @@
       "@root/*": ["./*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/last-seen.jsx"],
   "exclude": ["node_modules"]
 }
