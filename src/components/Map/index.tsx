@@ -28,11 +28,6 @@ const LeafletMap = dynamic(async () => (await import('./LeafletMap')).LeafletMap
   ssr: false,
 })
 
-interface PlacesType {
-  position: LatLngExpression
-  category: Category
-}
-
 const MapInner = () => {
   const { map } = useMapContext()
   const leafletWindow = useLeafletWindow()

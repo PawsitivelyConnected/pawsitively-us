@@ -1,5 +1,6 @@
 import { Leaf, LocateFixed, LucideProps, PersonStanding } from 'lucide-react'
 import { FunctionComponent } from 'react'
+import { TiLocationArrow } from 'react-icons/ti'
 import colors from 'tailwindcss/colors'
 
 export enum Category {
@@ -21,7 +22,7 @@ type MarkerCategorieType = {
 const MarkerCategories: MarkerCategorieType = {
   [Category.LOCATE]: {
     name: 'User Location',
-    icon: LocateFixed,
+    icon: TiLocationArrow,
     color: colors.green[400],
   },
   [Category.CAT1]: {
