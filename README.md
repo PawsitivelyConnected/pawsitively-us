@@ -1,41 +1,15 @@
-typescript next.js starter kit for leaflet-react
+Pawsitively Me - An open-source simple dog tracking mechanism
 ===============
 
-An extensible [next.js](https://nextjs.org/) starter kit for the [leaflet-react](https://react-leaflet.js.org/) map plugin. Template visually enhanced by [tailwind](https://tailwindcss.com/) and [lucide icons](https://lucide.dev/). ✨
-Setup with [typescript](https://www.typescriptlang.org/) 👐.
+An extensible [next.js](https://nextjs.org/) starter kit for the [leaflet-react](https://react-leaflet.js.org/) map plugin. Template visually enhanced by [tailwind](https://tailwindcss.com/) and [lucide icons](https://lucide.dev/) ✨ Setup with [typescript](https://www.typescriptlang.org/) 👐.
 
 Packed with useful components and hooks for using the map and create UI elements for your next(.js) big mapping project.
-
-### Table of Contents
-1. [Features](#features)
-2. [Getting started](#getting-started)
-    1. [Clone & Deploy with Github and Vercel](#clone-deploy)
-    2. [Manual install](#manual-install)
-3. [Start up](#start-up)
-4. [Coming up (probably)](#coming-up)
-5. [Dependencies](#dependencies)
-6. [Removing linting rules](#disable-lint)
-7. [No typescript?](#no-ts)
-
-### <a id="features"></a> 🎇 Features
-
-- 🏇 mighty next.js 13 leaflet-react no-ssr setup
-- 😏 typescript + strict lint setup
-- 🔗 next.js ready route nav module
-- 🌤 modular demo content
-- 🐛 custom marker icons
-- 📚 marker categories
-- 🫧 marker cluster by category with matching icon+color and notification bubble with marker count
-- ⚓️ custom hooks for getting marker data and map context (thx [Flo301](https://github.com/Flo301))
-- 🏡 custom ui components (locate me, center on markers)
 
 ### <a id="getting-started"></a> 🏎 Getting Started
 
 #### <a id="clone-deploy"></a> ⛴ Clone & Deploy with Github and Vercel
 
 Create new Github repo with vercel and deploy it within minutes. Could not be easier as hitting some buttons. Shipping of private repos is possible.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frichard-unterberg%2Fnext-leaflet-starter-typescript)
 
 Later: Check out your repo locally and run ```npm install``` or ```yarn``` in root
 
@@ -94,19 +68,6 @@ yarn start
 
 ### <a id="dependencies"></a> 📦 All them dependencies
 
-```json
-"next": "^13.2.3",
-"react": "^18.2.0",
-"react-dom": "^18.2.0",
-"react-leaflet": "^4.2.1",
-"@react-leaflet/core": "^2.1.0",
-"leaflet": "^1.9.3",
-"leaflet.markercluster": "^1.5.3",
-"react-resize-detector": "^8.0.4",
-"tailwindcss": "^3.2.6"
-"lodash": "^4.17.21",
-"lucide-react": "^0.121.0",
-```
 
 See ```package.json``` for more details and devDependencies.
 
