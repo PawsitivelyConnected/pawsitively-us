@@ -1,9 +1,7 @@
 Pawsitively Me - An open-source simple dog tracking mechanism
 ===============
 
-An extensible [next.js](https://nextjs.org/) starter kit for the [leaflet-react](https://react-leaflet.js.org/) map plugin. Template visually enhanced by [tailwind](https://tailwindcss.com/) and [lucide icons](https://lucide.dev/) ✨ Setup with [typescript](https://www.typescriptlang.org/) 👐.
-
-Packed with useful components and hooks for using the map and create UI elements for your next(.js) big mapping project.
+This project extensibly uses GSM Module to track your lvoed ones
 
 ### <a id="getting-started"></a> 🏎 Getting Started
 
