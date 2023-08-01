@@ -1,7 +1,7 @@
 Pawsitively Me - An open-source simple dog tracking mechanism
 ===============
 
-This project extensibly uses GSM Module to track your lvoed ones
+This project extensibly uses GSM Module to track your loved ones
 
 ### <a id="getting-started"></a> 🏎 Getting Started
 
